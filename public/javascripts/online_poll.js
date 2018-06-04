@@ -1,7 +1,6 @@
-let defaultName = 'Հարգելի  աշխատակից';
-let name = prompt("Խնդրում  ենք  մուտքագրել  ձեր  անունը", "Հարգելի  աշխատակից");
-
 window.onload = function(){
+  let defaultName = 'Հարգելի  աշխատակից';
+  let name = prompt("Խնդրում  ենք  մուտքագրել  ձեր  անունը", "Հարգելի  աշխատակից");
   let userName = name ? name : defaultName;
   document.getElementById('name').innerHTML = 'Բարև Հարգելի ' + userName + '։ Դուք  գոհ  ե՞ք  Ձեր  աշխատավարձից։';
 }
