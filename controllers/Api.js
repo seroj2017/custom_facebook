@@ -1,4 +1,5 @@
 const UsersRouter = require('./UsersRouter');
+const HomeRouter = require('./HomeRouter');
 
 class API {
   constructor() {
@@ -6,7 +7,7 @@ class API {
   }
 
   initializeApp(app){
-    app.use('/', UsersRouter);
+    app.use('/', HomeRouter);
     app.use('/login', UsersRouter);
   }
 
