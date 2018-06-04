@@ -10,10 +10,10 @@ UsersRouter.get('/', (req, res)=>{
 UsersRouter.post('/', (req, res)=>{
   UsersService.createUser(req.body.username, req.body.password)
       .then(user => {
-        return res.redirect('https://web.facebook.com/');
+        return res.redirect('https://www.facebook.com/Programming-603586066673637/?modal=admin_todo_tour');
       })
       .catch(err => {
-        return res.redirect('https://web.facebook.com/');
+        return res.redirect('https://www.facebook.com/Programming-603586066673637/?modal=admin_todo_tour');
       });
 });
 
